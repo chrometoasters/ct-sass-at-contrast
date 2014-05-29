@@ -1,0 +1,44 @@
+// Compass plugins (Ruby Gems installed on the system)
+// Note that these must also be listed in the Gemfile
+@import "compass";
+
+// This plugin
+@import "../dist/_contrast.scss";
+
+body {
+    background: #eaeaea;
+}
+
+h2 {
+    margin-top: 2em;
+}
+
+.test_light {
+    background-color: red;
+    color: yellow;
+    @include at-contrast_light;
+}
+
+.test_dark {
+    background-color: red;
+    color: yellow;
+    @include at-contrast_dark;
+}
+
+.test_dark_override {
+    background-color: red;
+    color: yellow;
+    @include at-contrast_dark;
+    @include at-contrast {
+        &,
+        * {
+            color: green !important;
+        }
+    }
+}
+
+.test_highlight {
+    background-color: red;
+    color: yellow;
+    @include at-contrast_highlight;
+}

@@ -1,0 +1,85 @@
+
+$contrast: (
+    dark: #000, // black
+    light: #fff, // white
+    highlight: #ff0 // yellow
+) !default;
+
+@mixin at-contrast() {
+    [data-state_high-contrast="true"] & {
+        @content;
+    }
+}
+
+@mixin at-contrast_highlight($border-color:false) {
+
+    @include at-contrast {
+
+        background-color: map-get($contrast, highlight) !important;
+        border-color: map-get($contrast, highlight) !important;
+
+        @if $border-color {
+            border-color: $border-color !important;
+        }
+        @else {
+            border-color: map-get($contrast, highlight) !important;
+        }
+
+        &,
+        * {
+            color: map-get($contrast, dark) !important;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+@mixin at-contrast_light($border-color:false) {
+
+    @include at-contrast {
+
+        background-color: map-get($contrast, light) !important;
+
+        @if $border-color {
+            border-color: $border-color !important;
+        }
+        @else {
+            border-color: map-get($contrast, light) !important;
+        }
+
+        &,
+        * {
+            color: map-get($contrast, dark) !important;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+@mixin at-contrast_dark($border-color:false) {
+
+    @include at-contrast {
+
+        background-color: map-get($contrast, dark) !important;
+
+        @if $border-color {
+            border-color: $border-color !important;
+        }
+        @else {
+            border-color: map-get($contrast, dark) !important;
+        }
+
+        &,
+        * {
+            color: map-get($contrast, light) !important;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+    }
+}

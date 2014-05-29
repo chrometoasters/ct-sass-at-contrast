@@ -1,0 +1,24 @@
+{
+    "name": "ct-sass-at-contrast",
+    "description": "A high contrast mixin.",
+    "version": "1.0.0",
+    "main": "dist",
+    "license": "All rights reserved",
+    "ignore": [],
+    "keywords": [],
+    "authors": [
+        {
+            "name": "Dan Smith",
+            "email": "dan.smith@chrometoaster.com"
+        }
+    ],
+    "homepage": "http://github.com/chrometoasters/ct-sass-at-contrast",
+    "repository": {
+        "type": "github",
+        "url": "http://github.com/chrometoasters/ct-sass-at-contrast.git"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "resolutions": {},
+    "private": true
+}

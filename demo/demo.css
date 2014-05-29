@@ -1,0 +1,95 @@
+/* line 8, demo.scss */
+body {
+  background: #eaeaea;
+}
+
+/* line 12, demo.scss */
+h2 {
+  margin-top: 2em;
+}
+
+/* line 16, demo.scss */
+.test_light {
+  background-color: red;
+  color: yellow;
+}
+/* line 9, ../dist/_contrast.scss */
+[data-state_high-contrast="true"] .test_light {
+  background-color: white !important;
+  border-color: white !important;
+}
+/* line 52, ../dist/_contrast.scss */
+[data-state_high-contrast="true"] .test_light,
+[data-state_high-contrast="true"] .test_light * {
+  color: black !important;
+}
+/* line 57, ../dist/_contrast.scss */
+[data-state_high-contrast="true"] .test_light a {
+  text-decoration: underline;
+}
+
+/* line 22, demo.scss */
+.test_dark {
+  background-color: red;
+  color: yellow;
+}
+/* line 9, ../dist/_contrast.scss */
+[data-state_high-contrast="true"] .test_dark {
+  background-color: black !important;
+  border-color: black !important;
+}
+/* line 76, ../dist/_contrast.scss */
+[data-state_high-contrast="true"] .test_dark,
+[data-state_high-contrast="true"] .test_dark * {
+  color: white !important;
+}
+/* line 81, ../dist/_contrast.scss */
+[data-state_high-contrast="true"] .test_dark a {
+  text-decoration: underline;
+}
+
+/* line 28, demo.scss */
+.test_dark_override {
+  background-color: red;
+  color: yellow;
+}
+/* line 9, ../dist/_contrast.scss */
+[data-state_high-contrast="true"] .test_dark_override {
+  background-color: black !important;
+  border-color: black !important;
+}
+/* line 76, ../dist/_contrast.scss */
+[data-state_high-contrast="true"] .test_dark_override,
+[data-state_high-contrast="true"] .test_dark_override * {
+  color: white !important;
+}
+/* line 81, ../dist/_contrast.scss */
+[data-state_high-contrast="true"] .test_dark_override a {
+  text-decoration: underline;
+}
+/* line 33, demo.scss */
+[data-state_high-contrast="true"] .test_dark_override,
+[data-state_high-contrast="true"] .test_dark_override * {
+  color: green !important;
+}
+
+/* line 40, demo.scss */
+.test_highlight {
+  background-color: red;
+  color: yellow;
+}
+/* line 9, ../dist/_contrast.scss */
+[data-state_high-contrast="true"] .test_highlight {
+  background-color: yellow !important;
+  border-color: yellow !important;
+  border-color: yellow !important;
+}
+/* line 28, ../dist/_contrast.scss */
+[data-state_high-contrast="true"] .test_highlight,
+[data-state_high-contrast="true"] .test_highlight * {
+  color: black !important;
+}
+/* line 33, ../dist/_contrast.scss */
+[data-state_high-contrast="true"] .test_highlight a {
+  text-decoration: none;
+}
