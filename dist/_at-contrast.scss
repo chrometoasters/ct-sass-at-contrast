@@ -6,7 +6,7 @@ $contrast: (
 ) !default;
 
 @mixin at-contrast_root() {
-    [data-state_high-contrast="true"] {
+    &[data-state_high-contrast="true"] {
         @content;
     }
 }
