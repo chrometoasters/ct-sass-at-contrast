@@ -5,81 +5,158 @@ $contrast: (
     highlight: #ff0 // yellow
 ) !default;
 
+@mixin at-contrast_root() {
+    [data-state_high-contrast="true"] {
+        @content;
+    }
+}
+
 @mixin at-contrast() {
     [data-state_high-contrast="true"] & {
         @content;
     }
 }
 
-@mixin at-contrast_highlight($border-color:false) {
+@mixin at-contrast_highlight($border-color:false, $root:false) {
 
-    @include at-contrast {
-
-        background-color: map-get($contrast, highlight) !important;
-        border-color: map-get($contrast, highlight) !important;
-
-        @if $border-color {
-            border-color: $border-color !important;
-        }
-        @else {
+    @if $root {
+        @include at-contrast_root {
+            background-color: map-get($contrast, highlight) !important;
             border-color: map-get($contrast, highlight) !important;
-        }
 
-        &,
-        * {
-            color: map-get($contrast, dark) !important;
-        }
+            @if $border-color {
+                border-color: $border-color !important;
+            }
+            @else {
+                border-color: map-get($contrast, highlight) !important;
+            }
 
-        a {
-            text-decoration: none;
+            &,
+            * {
+                color: map-get($contrast, dark) !important;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+    @else {
+        @include at-contrast {
+
+            background-color: map-get($contrast, highlight) !important;
+            border-color: map-get($contrast, highlight) !important;
+
+            @if $border-color {
+                border-color: $border-color !important;
+            }
+            @else {
+                border-color: map-get($contrast, highlight) !important;
+            }
+
+            &,
+            * {
+                color: map-get($contrast, dark) !important;
+            }
+
+            a {
+                text-decoration: none;
+            }
         }
     }
 }
 
-@mixin at-contrast_light($border-color:false) {
+@mixin at-contrast_light($border-color:false, $root:false) {
 
-    @include at-contrast {
+    @if $root {
+        @include at-contrast_root {
 
-        background-color: map-get($contrast, light) !important;
+            background-color: map-get($contrast, light) !important;
 
-        @if $border-color {
-            border-color: $border-color !important;
+            @if $border-color {
+                border-color: $border-color !important;
+            }
+            @else {
+                border-color: map-get($contrast, light) !important;
+            }
+
+            &,
+            * {
+                color: map-get($contrast, dark) !important;
+            }
+
+            a {
+                text-decoration: underline;
+            }
         }
-        @else {
-            border-color: map-get($contrast, light) !important;
-        }
+    }
+    @else {
+        @include at-contrast {
 
-        &,
-        * {
-            color: map-get($contrast, dark) !important;
-        }
+            background-color: map-get($contrast, light) !important;
 
-        a {
-            text-decoration: underline;
+            @if $border-color {
+                border-color: $border-color !important;
+            }
+            @else {
+                border-color: map-get($contrast, light) !important;
+            }
+
+            &,
+            * {
+                color: map-get($contrast, dark) !important;
+            }
+
+            a {
+                text-decoration: underline;
+            }
         }
     }
 }
 
-@mixin at-contrast_dark($border-color:false) {
+@mixin at-contrast_dark($border-color:false, $root:false) {
 
-    @include at-contrast {
+    @if $root {
+        @include at-contrast_root {
+            background-color: map-get($contrast, dark) !important;
 
-        background-color: map-get($contrast, dark) !important;
+            @if $border-color {
+                border-color: $border-color !important;
+            }
+            @else {
+                border-color: map-get($contrast, dark) !important;
+            }
 
-        @if $border-color {
-            border-color: $border-color !important;
+            &,
+            * {
+                color: map-get($contrast, light) !important;
+            }
+
+            a {
+                text-decoration: underline;
+            }
         }
-        @else {
-            border-color: map-get($contrast, dark) !important;
-        }
+    }
+    @else {
+        @include at-contrast {
 
-        &,
-        * {
-            color: map-get($contrast, light) !important;
-        }
+            background-color: map-get($contrast, dark) !important;
 
-        a {
-            text-decoration: underline;
+            @if $border-color {
+                border-color: $border-color !important;
+            }
+            @else {
+                border-color: map-get($contrast, dark) !important;
+            }
+
+            &,
+            * {
+                color: map-get($contrast, light) !important;
+            }
+
+            a {
+                text-decoration: underline;
+            }
         }
     }
 }
