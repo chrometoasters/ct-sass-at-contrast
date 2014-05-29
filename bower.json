@@ -1,7 +1,7 @@
 {
     "name": "ct-sass-at-contrast",
     "description": "A high contrast mixin.",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "main": "dist",
     "license": "All rights reserved",
     "ignore": [],
