@@ -40,7 +40,7 @@ To customise the plugin options, specify your own map before importing the mixin
         attribute: '[data-state_high-contrast="true"]',
         root_theme: 'dark'
     );
-    @import "ct-sass-at-contrast/_at-contrast.scss";
+    @import "ct-sass-at-contrast/at-contrast";
 
 ### HTML
 
