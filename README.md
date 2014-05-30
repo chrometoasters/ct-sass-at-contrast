@@ -124,7 +124,7 @@ Whereas this `.scss`:
             border-color: red;
         }
         
-      @include at-contrast {
+        @include at-contrast {
             .page-home & {
                 border-color: black !important;
             }
