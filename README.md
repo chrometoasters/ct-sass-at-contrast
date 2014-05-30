@@ -77,7 +77,7 @@ Apply a contrast color scheme variation to a module when `[data-state_high-contr
     .module-xxx {
         @include at-contrast_light;
         @include at-contrast {
-            background-color: map-get($contrast, dark) !important;
+            background-color: map-get($at-contrast, dark) !important;
             &,
             * {
                 color: green !important;
