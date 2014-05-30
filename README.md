@@ -136,7 +136,7 @@ Will produce this `.css`: (where the high contrast rule will apply)
     .page-home .m-modulename {
         border-color: red;
     }
-    [data-state_high-contrast="true"] .page-home .m-modulename {
+    .page-home [data-state_high-contrast="true"] .m-modulename {
         border-color: black !important;
     }
      
