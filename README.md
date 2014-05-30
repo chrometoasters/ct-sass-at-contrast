@@ -33,6 +33,7 @@ The high contrast colour scheme uses Sass Maps for namespacing, and `@at-root`, 
 
 To customise the plugin options, specify your own map before importing the mixin:
 
+    @import "compass";
     $at-contrast: (
         dark: #000, // black
         light: #fff, // white
