@@ -86,6 +86,61 @@ Apply a contrast color scheme variation to a module when `[data-state_high-contr
         }
     }
 
+## Gotchas
+
+Be careful when referencing parent selectors by using the ampersand (`&`) selector.
+
+With this markup:
+
+    <body class="page-home">
+        <div data-state_high-contrast="true">
+            <div class="m-modulename">
+
+This `.scss`:
+
+    .m-modulename {
+        .page-home & {
+            border-color: red;
+        
+          @include at-contrast {
+              border-color: map-get($at-contrast, dark) !important;
+          }
+        }
+    }
+    
+Will produce this `.css`: (where the high contrast rule will never apply)
+
+    .page-home .m-modulename {
+        border-color: red;
+    }
+    [data-state_high-contrast="true"] .page-home .m-modulename {
+        border-color: black !important;
+    }
+    
+Whereas this `.scss`:
+
+    .m-modulename {
+        .page-home & {
+            border-color: red;
+        }
+        
+      @include at-contrast {
+          .page-home & {
+              border-color: map-get($at-contrast, dark) !important;
+          }
+        }
+    }
+
+Will produce this `.css`: (where the high contrast rule will apply)
+
+    .page-home .m-modulename {
+        border-color: red;
+    }
+    [data-state_high-contrast="true"] .page-home .m-modulename {
+        border-color: black !important;
+    }
+     
+
 ## TODO
 
 1. Ideally contrast rules would be in a separate stylesheet. There are currently no clean solutions to this problem (`styleguide.scss` which outputs everything + `.styleguide` rules; 'is' and 'not' mixins).
