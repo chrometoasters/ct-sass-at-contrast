@@ -126,7 +126,7 @@ Whereas this `.scss`:
         
       @include at-contrast {
             .page-home & {
-                border-color: map-get($at-contrast, dark) !important;
+                border-color: black !important;
             }
         }
     }
