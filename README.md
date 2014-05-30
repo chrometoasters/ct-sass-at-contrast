@@ -102,9 +102,9 @@ This `.scss`:
         .page-home & {
             border-color: red;
         
-          @include at-contrast {
-              border-color: map-get($at-contrast, dark) !important;
-          }
+            @include at-contrast {
+                border-color: black !important;
+            }
         }
     }
     
@@ -125,9 +125,9 @@ Whereas this `.scss`:
         }
         
       @include at-contrast {
-          .page-home & {
-              border-color: map-get($at-contrast, dark) !important;
-          }
+            .page-home & {
+                border-color: map-get($at-contrast, dark) !important;
+            }
         }
     }
 
