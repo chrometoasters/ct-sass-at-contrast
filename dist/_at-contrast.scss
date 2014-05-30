@@ -1,162 +1,105 @@
 
-$contrast: (
+$at-contrast: (
     dark: #000, // black
     light: #fff, // white
-    highlight: #ff0 // yellow
+    highlight: #ff0, // yellow,
+    selector: '[data-state_high-contrast="true"]',
+    root_theme: 'dark'
 ) !default;
 
-@mixin at-contrast_root() {
-    &[data-state_high-contrast="true"] {
-        @content;
-    }
-}
-
-@mixin at-contrast() {
-    [data-state_high-contrast="true"] & {
-        @content;
-    }
-}
-
-@mixin at-contrast_highlight($border-color:false, $root:false) {
+@mixin at-contrast($root:false) {
+    $selector: map-get($at-contrast, selector);
 
     @if $root {
-        @include at-contrast_root {
-            background-color: map-get($contrast, highlight) !important;
-            border-color: map-get($contrast, highlight) !important;
-
-            @if $border-color {
-                border-color: $border-color !important;
-            }
-            @else {
-                border-color: map-get($contrast, highlight) !important;
-            }
-
-            &,
-            * {
-                color: map-get($contrast, dark) !important;
-            }
-
-            a {
-                text-decoration: none;
+        @at-root {
+            #{$selector} {
+                @content;
             }
         }
     }
     @else {
-        @include at-contrast {
-
-            background-color: map-get($contrast, highlight) !important;
-            border-color: map-get($contrast, highlight) !important;
-
-            @if $border-color {
-                border-color: $border-color !important;
-            }
-            @else {
-                border-color: map-get($contrast, highlight) !important;
-            }
-
-            &,
-            * {
-                color: map-get($contrast, dark) !important;
-            }
-
-            a {
-                text-decoration: none;
-            }
+        #{$selector} & {
+            @content;
         }
     }
 }
 
-@mixin at-contrast_light($border-color:false, $root:false) {
+@mixin at-contrast_root {
+    $root_theme: map-get($at-contrast, root_theme);
 
-    @if $root {
-        @include at-contrast_root {
-
-            background-color: map-get($contrast, light) !important;
-
-            @if $border-color {
-                border-color: $border-color !important;
-            }
-            @else {
-                border-color: map-get($contrast, light) !important;
-            }
-
-            &,
-            * {
-                color: map-get($contrast, dark) !important;
-            }
-
-            a {
-                text-decoration: underline;
-            }
-        }
+    @if $root_theme == 'dark' {
+        @include at-contrast_dark($root:true);
     }
-    @else {
-        @include at-contrast {
+    @elseif $root_theme == 'light' {
+        @include at-contrast_light($root:true);
+    }
+    @elseif $root_theme == 'highlight' {
+        @include at-contrast_highlight($root:true);
+    }
+}
 
-            background-color: map-get($contrast, light) !important;
+@mixin at-contrast_generator($background-color, $foreground-color, $border-color, $root) {
+    @include at-contrast($root) {
+        background-color: map-get($at-contrast, $background-color) !important;
+        border-color: map-get($at-contrast, $border-color) !important;
 
-            @if $border-color {
-                border-color: $border-color !important;
-            }
-            @else {
-                border-color: map-get($contrast, light) !important;
-            }
+        &,
+        * {
+            color: map-get($at-contrast, $foreground-color) !important;
+        }
 
-            &,
-            * {
-                color: map-get($contrast, dark) !important;
-            }
-
-            a {
-                text-decoration: underline;
-            }
+        a {
+            text-decoration: underline;
         }
     }
 }
 
 @mixin at-contrast_dark($border-color:false, $root:false) {
-
-    @if $root {
-        @include at-contrast_root {
-            background-color: map-get($contrast, dark) !important;
-
-            @if $border-color {
-                border-color: $border-color !important;
-            }
-            @else {
-                border-color: map-get($contrast, dark) !important;
-            }
-
-            &,
-            * {
-                color: map-get($contrast, light) !important;
-            }
-
-            a {
-                text-decoration: underline;
-            }
-        }
+    @if $border-color {
+        @include at-contrast_generator(dark, light, $border-color, $root);
     }
     @else {
-        @include at-contrast {
-
-            background-color: map-get($contrast, dark) !important;
-
-            @if $border-color {
-                border-color: $border-color !important;
-            }
-            @else {
-                border-color: map-get($contrast, dark) !important;
-            }
-
-            &,
-            * {
-                color: map-get($contrast, light) !important;
-            }
-
-            a {
-                text-decoration: underline;
-            }
-        }
+        @include at-contrast_generator(dark, light, dark, $root);
     }
 }
+
+@mixin at-contrast_light($border-color:false, $root:false) {
+    @if $border-color {
+        @include at-contrast_generator(light, dark, $border-color, $root);
+    }
+    @else {
+        @include at-contrast_generator(light, dark, light, $root);
+    }
+}
+
+@mixin at-contrast_highlight($border-color:false, $root:false) {
+    @if $border-color {
+        @include at-contrast_generator(highlight, dark, $border-color, $root);
+    }
+    @else {
+        @include at-contrast_generator(highlight, dark, highlight, $root);
+    }
+}
+
+// set root style
+// note that this is not actually applied to the html element, as @at-root is used
+
+html {
+    @include at-contrast_root;
+}
+
+/*
+Tests:
+
+.dark {
+    @include at-contrast_dark;
+}
+
+.light {
+    @include at-contrast_light;
+}
+
+.highlight {
+    @include at-contrast_highlight;
+}
+*/

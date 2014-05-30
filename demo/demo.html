@@ -6,50 +6,54 @@
     <link rel="stylesheet" href="demo.css" />
   </head>
   <body>
-    <h1>ct-sass-at-contrast</h1>
-    <h2>Regular</h2>
-    <div class="test_light">
-      <h3>Title</h3>
-      <p>Text</p>
-    </div>
-    <!-- /.test_light -->
-    <div class="test_dark">
-      <h3>Title</h3>
-      <p>Text</p>
-    </div>
-    <!-- /.test_dark -->
-    <div class="test_dark_override">
-      <h3>Title</h3>
-      <p>Text</p>
-    </div>
-    <!-- /.test_dark_override -->
-    <div class="test_highlight">
-      <h3>Title</h3>
-      <p>Text</p>
-    </div>
-    <!-- /.test_highlight -->
-    <div data-state_high-contrast="true">
-      <h2>High Contrast</h2>
+    <h1>ct-sass-at-contrast tests</h1>
+    <div class="test-wrapper">
+      <h2>Regular</h2>
       <div class="test_light">
-        <h3>Title</h3>
+        <h3>Light</h3>
         <p>Text</p>
       </div>
       <!-- /.test_light -->
       <div class="test_dark">
-        <h3>Title</h3>
+        <h3>Dark</h3>
         <p>Text</p>
       </div>
       <!-- /.test_dark -->
-    <div class="test_dark_override">
-      <h3>Title</h3>
-      <p>Text</p>
-    </div>
-    <!-- /.test_dark_override -->
+      <div class="test_dark_override">
+        <h3>Dark with override</h3>
+        <p>Text</p>
+      </div>
+      <!-- /.test_dark_override -->
       <div class="test_highlight">
-        <h3>Title</h3>
+        <h3>Highlight</h3>
         <p>Text</p>
       </div>
       <!-- /.test_highlight -->
     </div>
+    <!-- /.test-wrapper -->
+    <div class="test-wrapper" data-state_high-contrast="true">
+      <h2>High Contrast</h2>
+      <div class="test_light">
+        <h3>Light</h3>
+        <p>Text</p>
+      </div>
+      <!-- /.test_light -->
+      <div class="test_dark">
+        <h3>Dark</h3>
+        <p>Text</p>
+      </div>
+      <!-- /.test_dark -->
+    <div class="test_dark_override">
+      <h3>Dark with override</h3>
+      <p>Text</p>
+    </div>
+    <!-- /.test_dark_override -->
+      <div class="test_highlight">
+        <h3>Highlight</h3>
+        <p>Text</p>
+      </div>
+      <!-- /.test_highlight -->
+    </div>
+    <!-- /.test-wrapper -->
   </body>
 </html>

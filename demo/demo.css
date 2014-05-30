@@ -1,3 +1,33 @@
+/* line 15, ../dist/_at-contrast.scss */
+[data-state_high-contrast="true"] {
+  background-color: black !important;
+  border-color: black !important;
+}
+/* line 46, ../dist/_at-contrast.scss */
+[data-state_high-contrast="true"],
+[data-state_high-contrast="true"] * {
+  color: white !important;
+}
+/* line 51, ../dist/_at-contrast.scss */
+[data-state_high-contrast="true"] a {
+  text-decoration: underline;
+}
+
+/*
+Tests:
+
+.dark {
+    @include at-contrast_dark;
+}
+
+.light {
+    @include at-contrast_light;
+}
+
+.highlight {
+    @include at-contrast_highlight;
+}
+*/
 /* line 8, demo.scss */
 body {
   background: #eaeaea;
@@ -9,87 +39,91 @@ h2 {
 }
 
 /* line 16, demo.scss */
+.test-wrapper {
+  padding: 1em;
+}
+
+/* line 20, demo.scss */
 .test_light {
   background-color: red;
   color: yellow;
 }
-/* line 15, ../dist/_at-contrast.scss */
+/* line 21, ../dist/_at-contrast.scss */
 [data-state_high-contrast="true"] .test_light {
   background-color: white !important;
   border-color: white !important;
 }
-/* line 105, ../dist/_at-contrast.scss */
+/* line 46, ../dist/_at-contrast.scss */
 [data-state_high-contrast="true"] .test_light,
 [data-state_high-contrast="true"] .test_light * {
   color: black !important;
 }
-/* line 110, ../dist/_at-contrast.scss */
+/* line 51, ../dist/_at-contrast.scss */
 [data-state_high-contrast="true"] .test_light a {
   text-decoration: underline;
 }
 
-/* line 22, demo.scss */
+/* line 26, demo.scss */
 .test_dark {
   background-color: red;
   color: yellow;
 }
-/* line 15, ../dist/_at-contrast.scss */
+/* line 21, ../dist/_at-contrast.scss */
 [data-state_high-contrast="true"] .test_dark {
   background-color: black !important;
   border-color: black !important;
 }
-/* line 152, ../dist/_at-contrast.scss */
+/* line 46, ../dist/_at-contrast.scss */
 [data-state_high-contrast="true"] .test_dark,
 [data-state_high-contrast="true"] .test_dark * {
   color: white !important;
 }
-/* line 157, ../dist/_at-contrast.scss */
+/* line 51, ../dist/_at-contrast.scss */
 [data-state_high-contrast="true"] .test_dark a {
   text-decoration: underline;
 }
 
-/* line 28, demo.scss */
+/* line 32, demo.scss */
 .test_dark_override {
   background-color: red;
   color: yellow;
 }
-/* line 15, ../dist/_at-contrast.scss */
+/* line 21, ../dist/_at-contrast.scss */
 [data-state_high-contrast="true"] .test_dark_override {
   background-color: black !important;
   border-color: black !important;
 }
-/* line 152, ../dist/_at-contrast.scss */
+/* line 46, ../dist/_at-contrast.scss */
 [data-state_high-contrast="true"] .test_dark_override,
 [data-state_high-contrast="true"] .test_dark_override * {
   color: white !important;
 }
-/* line 157, ../dist/_at-contrast.scss */
+/* line 51, ../dist/_at-contrast.scss */
 [data-state_high-contrast="true"] .test_dark_override a {
   text-decoration: underline;
 }
-/* line 33, demo.scss */
+/* line 37, demo.scss */
 [data-state_high-contrast="true"] .test_dark_override,
 [data-state_high-contrast="true"] .test_dark_override * {
   color: green !important;
 }
 
-/* line 40, demo.scss */
+/* line 44, demo.scss */
 .test_highlight {
   background-color: red;
   color: yellow;
 }
-/* line 15, ../dist/_at-contrast.scss */
+/* line 21, ../dist/_at-contrast.scss */
 [data-state_high-contrast="true"] .test_highlight {
   background-color: yellow !important;
   border-color: yellow !important;
-  border-color: yellow !important;
 }
-/* line 57, ../dist/_at-contrast.scss */
+/* line 46, ../dist/_at-contrast.scss */
 [data-state_high-contrast="true"] .test_highlight,
 [data-state_high-contrast="true"] .test_highlight * {
   color: black !important;
 }
-/* line 62, ../dist/_at-contrast.scss */
+/* line 51, ../dist/_at-contrast.scss */
 [data-state_high-contrast="true"] .test_highlight a {
-  text-decoration: none;
+  text-decoration: underline;
 }
