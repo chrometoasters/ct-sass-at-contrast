@@ -37,14 +37,14 @@ To customise the plugin options, specify your own map before importing the mixin
         dark: #000, // black
         light: #fff, // white
         highlight: #ff0, // yellow,
-        selector: '[data-state_high-contrast="true"]',
+        attribute: '[data-state_high-contrast="true"]',
         root_theme: 'dark'
     );
     @import "ct-sass-at-contrast/_at-contrast.scss";
 
 ### HTML
 
-High contrast styles are applied when a parent element has the high-contrast selector (refer map above).
+High contrast styles are applied when a parent element has the high-contrast attribute (refer map above).
 
 This can be applied to any wrapper element, including the root (`html`).
 
