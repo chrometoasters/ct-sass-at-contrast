@@ -146,3 +146,4 @@ Will produce this `.css`: (where the high contrast rule will apply)
 1. Ideally contrast rules would be in a separate stylesheet. There are currently no clean solutions to this problem (`styleguide.scss` which outputs everything + `.styleguide` rules; 'is' and 'not' mixins).
 1. Colour overrides require the `*` selector
 1. Add tests, using [getComputedStyle](http://stackoverflow.com/questions/19137507/jquery-equivalent-for-getcomputedstyle)
+1. Check if `@include at-contrast &` is another solution to Gotchas example
