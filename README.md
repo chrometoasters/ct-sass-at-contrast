@@ -8,7 +8,7 @@ __Please note: this plugin is optimised for internal Chrometoaster use. YMMV.__
 ## Installation
 
 1. In Terminal: `cd /PATH/TO/PROJECT-THEME-FOLDER`
-1. `bower install https://github.com/chrometoasters/ct-sass-at-contrast.git#v1.3.0 --save`
+1. `bower install https://github.com/chrometoasters/ct-sass-at-contrast.git#v1.3.1 --save`
 
 Note: if you wish to customise where Bower puts installed components, you may add a `.bowerrc` file into this folder:
 
@@ -44,7 +44,7 @@ To customise the plugin options, specify your own map before importing the mixin
 
 ### HTML
 
-High contrast styles are applied when a parent element has the high-contrast attribute (refer map above).
+High contrast styles are applied when a parent element has the high-contrast `attribute` (refer map above).
 
 This can be applied to any wrapper element, including the root (`html`).
 
