@@ -31,7 +31,7 @@ The high contrast colour scheme uses Sass Maps for namespacing, and `@at-root`, 
     @import "compass";
     @import "ct-sass-at-contrast/_at-contrast.scss";
 
-To customise the `light`, `dark` and `highlight` colours, specify your own map before importing the mixin:
+To customise the plugin options, specify your own map before importing the mixin:
 
     $at-contrast: (
         dark: #000, // black
