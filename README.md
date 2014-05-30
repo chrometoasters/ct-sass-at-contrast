@@ -44,11 +44,9 @@ To customise the plugin options, specify your own map before importing the mixin
 
 ### HTML
 
-High contrast styles are applied when a parent element has the high-contrast attribute:
+High contrast styles are applied when a parent element has the high-contrast selector (refer map above).
 
-    [data-state_high-contrast="true"]
-
-Usually this would be applied to the root element (`html`).
+This can be applied to any wrapper element, including the root (`html`).
 
 This attribute can be applied and toggled using the `ct-jquery-state` plugin.
 
