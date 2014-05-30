@@ -29,7 +29,7 @@ The high contrast colour scheme uses Sass Maps for namespacing, and `@at-root`, 
 ### SCSS
 
     @import "compass";
-    @import "ct-sass-at-contrast/_at-contrast.scss";
+    @import "ct-sass-at-contrast/at-contrast";
 
 To customise the plugin options, specify your own map before importing the mixin:
 
